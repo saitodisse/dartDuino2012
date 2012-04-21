@@ -1,3 +1,7 @@
+/**
+ * HTTP server
+ *
+ **/
 class HttpServerFactory {
   final HOST = "127.0.0.1";
   final PORT = 9000;

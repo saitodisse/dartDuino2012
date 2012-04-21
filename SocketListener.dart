@@ -26,8 +26,12 @@ class SocketListener {
       List<int> response = inputStream.read(socket.available());
       String command = new String.fromCharCodes(response);
       
-      runCommand(command);
+      receiveCommand(command);
     }; 
+    
+    socket.onClosed  = () {
+      socket.close();
+    };    
   }
   
   /**

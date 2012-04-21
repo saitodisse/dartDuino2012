@@ -26,6 +26,15 @@ class Question  {
     this.answers = answers;
     this.correctAnswer = correctAnswer;
   }
+  
+  bool validAnswer(String button)  {
+    for (int p; p < answers.length; p++)  {
+      if (answers[p] == correctAnswer)  {
+        // FIXME review this validation
+        return (p == button);
+      }
+    }
+  }  
 }
 
 class Answer  {

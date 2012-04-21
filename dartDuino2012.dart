@@ -45,6 +45,7 @@ void requestReceivedHandler(HttpRequest request, HttpResponse response) {
 
 void receiveCommand(String command) {
   print(">> ${command}");
+  writeCommand(command);
 }
 
 void writeCommand(String command) {
