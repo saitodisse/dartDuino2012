@@ -3,7 +3,8 @@ dartDuino2012
 
 #dartlang #darthack
 
-#JSON Example
+#### JSON response example ####
+```html
 {
     "question": "Question example 1?",
     "answers": [
@@ -22,3 +23,4 @@ dartDuino2012
     ],
     "status": true
 }
+```
