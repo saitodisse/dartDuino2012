@@ -79,6 +79,9 @@ void receiveCommand(String text) {
       
       // if finish restart the application
       if (quiz.finishQuestions()) {
+        if (!Config.ARDUINO_BELL_OFF)
+          socket.write(Command.TURN_BELL_ON(5));
+
         new Timer(15000, (var finishSeconds) {
           socket.write(Command.CLEAR);
           quiz.startQuestion();

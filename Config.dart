@@ -13,7 +13,7 @@ class Config {
   static final int HTTP_PORT = 9000;
   
   // log flag
-  static final bool LOG = true;
+  static final bool LOG = false;
   
   // tests without arduino connect
   static final bool ARDUINO_DISCONNECTED = false;
