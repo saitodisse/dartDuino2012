@@ -29,6 +29,9 @@ void main() {
   }
 }
 
+/**
+ * http handler
+ **/
 void requestReceivedHandler(HttpRequest request, HttpResponse response) {
   if (Config.LOG)
       print("Request: ${request.method} ${request.uri}");
@@ -43,6 +46,9 @@ void requestReceivedHandler(HttpRequest request, HttpResponse response) {
   response.outputStream.close();
 }
 
+/**
+ * receive arduino commands
+ **/
 void receiveCommand(String text) {  
   if (Command.isButtonSelected(text)) {
     String answer = text.substring(1,2);
@@ -70,6 +76,7 @@ void receiveCommand(String text) {
       socket.write(Command.CLEAR);
       quiz.nextQuestion();
       
+      // if finish restart the application
       if (quiz.finishQuestions()) {
         new Timer(15000, (var finishSeconds) {
           socket.write(Command.CLEAR);
