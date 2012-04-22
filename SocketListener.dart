@@ -2,16 +2,13 @@
  * Socket listener
  **/
 class SocketListener {
-  String socket_ip = "192.168.0.104";
-  int socket_port = 10002;
-  
   Socket socket;
   SocketInputStream inputStream;
   OutputStream outputStream;
   StringBuffer stringBuffer;
   
   SocketListener()  {
-    socket = new Socket(socket_ip, socket_port);
+    socket = new Socket(Config.SOCKET_IP, Config.SOCKET_PORT);
 
     socket.onError = (e) => print("Error: $e");
     
@@ -38,6 +35,7 @@ class SocketListener {
    * Socket write
    **/
   void write(String command)  {
-    outputStream.writeString(command);
+    if (outputStream != null)
+      outputStream.writeString(command);
   }
 }

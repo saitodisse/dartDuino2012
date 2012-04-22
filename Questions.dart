@@ -1,5 +1,7 @@
 /**
- * Program questions
+ *
+ * Program Questions
+ *
  **/
 class Questions {
   List<Question> questions;
@@ -13,6 +15,20 @@ class Questions {
     answers[2] = new Answer("Answer 3", false);
     
     questions.add(new Question("Question 1?", answers, "Answer 1"));
+    
+    List<Answer> answers2 = new List<Answer>(3);
+    answers2[0] = new Answer("Answer 1", false);
+    answers2[1] = new Answer("Answer 2", false);
+    answers2[2] = new Answer("Answer 3", false);
+    
+    questions.add(new Question("Question 2?", answers2, "Answer 2"));
+    
+    List<Answer> answers3 = new List<Answer>(3);
+    answers3[0] = new Answer("Answer 1", false);
+    answers3[1] = new Answer("Answer 2", false);
+    answers3[2] = new Answer("Answer 3", false);
+    
+    questions.add(new Question("Question 3?", answers3, "Answer 3"));    
   }
 }
 
@@ -27,11 +43,22 @@ class Question  {
     this.correctAnswer = correctAnswer;
   }
   
-  bool validAnswer(String button)  {
-    for (int p; p < answers.length; p++)  {
-      if (answers[p] == correctAnswer)  {
-        // FIXME review this validation
-        return (p == button);
+  bool isValidAnswer(String button)  {
+    if (Config.LOG)
+          print("button => ${button}");
+    
+    for (int p = 0; p < answers.length; p++)  {
+      if (Config.LOG)
+        print("${answers[p].value} == ${correctAnswer}");
+      
+      if (answers[p].value == correctAnswer)  {
+        if (Config.LOG)
+          print("button => ${p} == ${button}");
+        
+        bool isCorrect = ("${p}" == button);
+        answers[p].state = isCorrect;
+        
+        return (isCorrect);
       }
     }
   }  
