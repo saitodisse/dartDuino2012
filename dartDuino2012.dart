@@ -54,12 +54,16 @@ void receiveCommand(String text) {
     if (isCorrectAnswer)  {
       socket.write(Command.CLEAR);
       socket.write(Command.TURN_ON(answer,"G"));
-      socket.write(Command.TURN_BELL_ON(1));
+      
+      if (!Config.ARDUINO_BELL_OFF)
+        socket.write(Command.TURN_BELL_ON(1));
     } else  {
       socket.write(Command.CLEAR);
       socket.write(Command.TURN_ON(answer,"R"));
       socket.write(Command.TURN_ON(quiz.actualQuestion.correctAnswerPostion,"G"));
-      socket.write(Command.TURN_BELL_ON(3));
+      
+      if (!Config.ARDUINO_BELL_OFF)
+        socket.write(Command.TURN_BELL_ON(3));
     }
     
     new Timer(2000, (var millisencods) {

@@ -17,4 +17,7 @@ class Config {
   
   // tests without arduino connect
   static final bool ARDUINO_DISCONNECTED = false;
+  
+  // bell off
+  static final bool ARDUINO_BELL_OFF = true;
 }

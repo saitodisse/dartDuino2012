@@ -77,7 +77,7 @@ class Question  {
 
 class Answer  {
   String value;
-  bool state;
+  bool state; // N => neutral, C => correct and I => incorrect
   
   Answer(String value, bool state) {
     this.value = value;
