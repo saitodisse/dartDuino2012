@@ -10,25 +10,25 @@ class Questions {
     questions = new List<Question>();
     
     List<Answer> answers = new List<Answer>(3);
-    answers[0] = new Answer("Answer 1", false);
-    answers[1] = new Answer("Answer 2", false);
-    answers[2] = new Answer("Answer 3", false);
+    answers[0] = new Answer("Subversion", false);
+    answers[1] = new Answer("Mercurial", false);
+    answers[2] = new Answer("Git", false);
     
-    questions.add(new Question("Question 1?", answers, "Answer 1"));
+    questions.add(new Question("What is the best version control?", answers, answers[2].value"));
     
     List<Answer> answers2 = new List<Answer>(3);
-    answers2[0] = new Answer("Answer 1", false);
-    answers2[1] = new Answer("Answer 2", false);
-    answers2[2] = new Answer("Answer 3", false);
+    answers2[0] = new Answer("Waterfall development", false);
+    answers2[1] = new Answer("Agile software development ", false);
+    answers2[2] = new Answer("Spiral development", false);
     
-    questions.add(new Question("Question 2?", answers2, "Answer 2"));
+    questions.add(new Question("What is the best methodology to develop software?", answers2, answers[1].value));
     
     List<Answer> answers3 = new List<Answer>(3);
-    answers3[0] = new Answer("Answer 1", false);
-    answers3[1] = new Answer("Answer 2", false);
-    answers3[2] = new Answer("Answer 3", false);
+    answers3[0] = new Answer("int, float, decimal", false);
+    answers3[1] = new Answer("int, float, double", false);
+    answers3[2] = new Answer("int, double", false);
     
-    questions.add(new Question("Question 3?", answers3, "Answer 3"));    
+    questions.add(new Question("What are the numeric types of DART language?", answers3, answers3[2].value));    
   }
 }
 
