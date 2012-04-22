@@ -50,7 +50,10 @@ void requestReceivedHandler(HttpRequest request, HttpResponse response) {
  * receive arduino commands
  **/
 void receiveCommand(String text) {  
-  if (Command.isButtonSelected(text)) {
+  if (Config.LOG)
+    print("questionStatus => ${questionStatus}");
+  
+  if (questionStatus && Command.isButtonSelected(text)) {
     String answer = text.substring(1,2);
     bool isCorrectAnswer = quiz.actualQuestion.isValidAnswer(answer);
     
@@ -72,6 +75,8 @@ void receiveCommand(String text) {
         socket.write(Command.TURN_BELL_ON(3));
     }
     
+    questionStatus = false;
+
     new Timer(2000, (var millisencods) {
       socket.write(Command.CLEAR);
       quiz.nextQuestion();
@@ -85,6 +90,8 @@ void receiveCommand(String text) {
           socket.write(Command.CLEAR);
           quiz.startQuestion();
         }); 
+      } else {
+        questionStatus = true;
       }
     });    
   }
