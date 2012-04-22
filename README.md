@@ -2,9 +2,9 @@ dartDuino2012
 =============
 
 #### ROAD MAP ####
-* validate last question
+* block user when waiting the validation
+* timer to start the application again
 * timer to change the answer
-* 
 
 #dartlang #darthack
 

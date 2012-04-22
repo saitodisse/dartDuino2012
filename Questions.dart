@@ -10,23 +10,23 @@ class Questions {
     questions = new List<Question>();
     
     List<Answer> answers = new List<Answer>(3);
-    answers[0] = new Answer("Answer 1", false);
-    answers[1] = new Answer("Answer 2", false);
-    answers[2] = new Answer("Answer 3", false);
+    answers[0] = new Answer("Answer 1", Answer.NEUTRAL);
+    answers[1] = new Answer("Answer 2", Answer.NEUTRAL);
+    answers[2] = new Answer("Answer 3", Answer.NEUTRAL);
     
     questions.add(new Question("Question 1?", answers, "Answer 1"));
     
     List<Answer> answers2 = new List<Answer>(3);
-    answers2[0] = new Answer("Answer 1", false);
-    answers2[1] = new Answer("Answer 2", false);
-    answers2[2] = new Answer("Answer 3", false);
+    answers2[0] = new Answer("Answer 1", Answer.NEUTRAL);
+    answers2[1] = new Answer("Answer 2", Answer.NEUTRAL);
+    answers2[2] = new Answer("Answer 3", Answer.NEUTRAL);
     
     questions.add(new Question("Question 2?", answers2, "Answer 2"));
     
     List<Answer> answers3 = new List<Answer>(3);
-    answers3[0] = new Answer("Answer 1", false);
-    answers3[1] = new Answer("Answer 2", false);
-    answers3[2] = new Answer("Answer 3", false);
+    answers3[0] = new Answer("Answer 1", Answer.NEUTRAL);
+    answers3[1] = new Answer("Answer 2", Answer.NEUTRAL);
+    answers3[2] = new Answer("Answer 3", Answer.NEUTRAL);
     
     questions.add(new Question("Question 3?", answers3, "Answer 3"));    
   }
@@ -56,7 +56,7 @@ class Question  {
           print("button => ${p} == ${button}");
         
         bool isCorrect = ("${p}" == button);
-        answers[p].state = isCorrect;
+        answers[p].state = Answer.CORRECT;
         
         return isCorrect;
       }
@@ -77,9 +77,13 @@ class Question  {
 
 class Answer  {
   String value;
-  bool state; // N => neutral, C => correct and I => incorrect
+  String state; // N => neutral, C => correct and I => incorrect
   
-  Answer(String value, bool state) {
+  static final String NEUTRAL = "N";
+  static final String CORRECT = "C";
+  static final String INCORRECT = "I";
+  
+  Answer(String value, String state) {
     this.value = value;
     this.state = state;
   }

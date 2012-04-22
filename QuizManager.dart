@@ -3,7 +3,8 @@ int displayQuestion;
 
 class QuizManager {
   QuizManager() {
-    displayQuestion = 0;
+    this.startQuestion();
+    
     questions = new Questions();
   }
   
@@ -30,6 +31,21 @@ class QuizManager {
     
     if (Config.LOG)
       print("nextQuestion => ${questions.questions.length} < ${displayQuestion}");
+  }
+  
+  void startQuestion() {
+    displayQuestion = 0;
+    
+    if (Config.LOG)
+      print("startQuestion => ${startQuestion}");
+  }  
+  
+  bool finishQuestions()  {
+    if (questions.questions.length <= displayQuestion)  {
+      return true;
+    }
+    
+    return false;
   }
 }
 

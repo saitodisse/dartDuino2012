@@ -17,15 +17,15 @@ class Json {
               "answers": [
                   {
                       "value": "${question.answers[0].value}",
-                      "state": ${question.answers[0].state}
+                      "state": "${question.answers[0].state}"
                   },
                   {
                       "value": "${question.answers[1].value}",
-                      "state": ${question.answers[1].state}
+                      "state": "${question.answers[1].state}"
                   },
                   {
                       "value": "${question.answers[2].value}",
-                      "state": ${question.answers[2].state}
+                      "state": "${question.answers[2].state}"
                   }
               ],
               "status": "${status}"

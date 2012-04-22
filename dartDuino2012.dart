@@ -30,8 +30,8 @@ void main() {
 }
 
 void requestReceivedHandler(HttpRequest request, HttpResponse response) {
-  if (Config.LOG)
-      print("Request: ${request.method} ${request.uri}");
+//  if (Config.LOG)
+//      print("Request: ${request.method} ${request.uri}");
 
   String htmlResponse = quiz.showQuestion(questionStatus);
   
@@ -70,5 +70,12 @@ void receiveCommand(String text) {
       socket.write(Command.CLEAR);
       quiz.nextQuestion();
     });    
+  }
+  
+  if (quiz.finishQuestions()) {
+    new Timer(12000, (var millisencods) {
+      socket.write(Command.CLEAR);
+      quiz.startQuestion();
+    }); 
   }
 }
