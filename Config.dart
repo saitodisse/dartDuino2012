@@ -16,5 +16,5 @@ class Config {
   static final bool LOG = true;
   
   // tests without arduino connect
-  static final bool ARDUINO_DISCONNECTED = true;
+  static final bool ARDUINO_DISCONNECTED = false;
 }

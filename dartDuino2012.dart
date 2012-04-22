@@ -50,19 +50,15 @@ void receiveCommand(String text) {
     
     if (isCorrectAnswer)  {
       socket.write(Command.CLEAR);
-      writeCommand(answer,"G");
+      socket.write(Command.TURN_ON(answer,"G"));
     } else  {
       socket.write(Command.CLEAR);
-      writeCommand(answer,"R");
-      writeCommand(quiz.actualQuestion.correctAnswerPostion, "G");
+      socket.write(Command.TURN_ON(answer,"R"));
+      socket.write(Command.TURN_ON(quiz.actualQuestion.correctAnswerPostion,"G"));
     }
     
     new Timer(2000, (var millisencods) {
       quiz.nextQuestion();
     });    
   }
-}
-void writeCommand(String button, String rgb) {
-  socket.write(Command.CLEAR);
-  socket.write(Command.TURN_ON(button,rgb));
 }

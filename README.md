@@ -1,6 +1,11 @@
 dartDuino2012
 =============
 
+#### ROAD MAP ####
+* validate last question
+* timer to change the answer
+* 
+
 #dartlang #darthack
 
 #### JSON response example ####
