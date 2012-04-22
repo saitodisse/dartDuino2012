@@ -35,6 +35,7 @@ class QuizManager {
   
   void startQuestion() {
     displayQuestion = 0;
+    questions = new Questions();
     
     if (Config.LOG)
       print("startQuestion => ${startQuestion}");

@@ -69,13 +69,13 @@ void receiveCommand(String text) {
     new Timer(2000, (var millisencods) {
       socket.write(Command.CLEAR);
       quiz.nextQuestion();
+      
+      if (quiz.finishQuestions()) {
+        new Timer(15000, (var finishSeconds) {
+          socket.write(Command.CLEAR);
+          quiz.startQuestion();
+        }); 
+      }
     });    
-  }
-  
-  if (quiz.finishQuestions()) {
-    new Timer(12000, (var millisencods) {
-      socket.write(Command.CLEAR);
-      quiz.startQuestion();
-    }); 
   }
 }
