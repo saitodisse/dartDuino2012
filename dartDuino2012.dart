@@ -30,8 +30,8 @@ void main() {
 }
 
 void requestReceivedHandler(HttpRequest request, HttpResponse response) {
-//  if (Config.LOG)
-//      print("Request: ${request.method} ${request.uri}");
+  if (Config.LOG)
+      print("Request: ${request.method} ${request.uri}");
 
   String htmlResponse = quiz.showQuestion(questionStatus);
   

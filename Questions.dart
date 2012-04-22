@@ -21,7 +21,7 @@ class Questions {
     answers2[1] = new Answer("Agile software development ", Answer.NEUTRAL);
     answers2[2] = new Answer("Spiral development", Answer.NEUTRAL);
     
-    questions.add(new Question("What is the best methodology to develop software?", answers2, answers[1].value));
+    questions.add(new Question("What is the best methodology to develop software?", answers2, answers2[1].value));
     
     List<Answer> answers3 = new List<Answer>(3);
     answers3[0] = new Answer("int, float, decimal", Answer.NEUTRAL);
