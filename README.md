@@ -5,8 +5,6 @@ dartDuino2012
 * block user when waiting the validation
 * timer to change the answer
 
-#dartlang #darthack
-
 #### JSON response example ####
 ```html
 {
