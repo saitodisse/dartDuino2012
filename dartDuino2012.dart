@@ -51,14 +51,15 @@ void receiveCommand(String text) {
     if (isCorrectAnswer)  {
       socket.write(Command.CLEAR);
       writeCommand(answer,"G");
-      
-      new Timer(2000, (var millisencods) {
-        quiz.nextQuestion();
-      });
     } else  {
       socket.write(Command.CLEAR);
       writeCommand(answer,"R");
+      writeCommand(quiz.actualQuestion.correctAnswerPostion, "G");
     }
+    
+    new Timer(2000, (var millisencods) {
+      quiz.nextQuestion();
+    });    
   }
 }
 void writeCommand(String button, String rgb) {

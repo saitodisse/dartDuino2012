@@ -58,10 +58,21 @@ class Question  {
         bool isCorrect = ("${p}" == button);
         answers[p].state = isCorrect;
         
-        return (isCorrect);
+        return isCorrect;
       }
     }
-  }  
+  }
+  
+  String get correctAnswerPostion() {
+    for (int p = 0; p < answers.length; p++)  {
+      if (answers[p].value == correctAnswer)  {
+        if (Config.LOG)
+          print("correctAnswerPostion => ${p}");
+        
+        return "${p}";
+      }
+    }
+  }
 }
 
 class Answer  {

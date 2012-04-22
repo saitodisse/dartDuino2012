@@ -35,6 +35,9 @@ class SocketListener {
    * Socket write
    **/
   void write(String command)  {
+    if (Config.LOG)
+      print("socketCommand => ${command}");
+    
     if (outputStream != null)
       outputStream.writeString(command);
   }
