@@ -5,7 +5,7 @@
  **/
 class Config {
   // arduino socket config
-  static final String SOCKET_IP = "192.168.0.104";
+  static final String SOCKET_IP = "192.168.2.109";
   static final int SOCKET_PORT = 10002;
   
   // http servlet config

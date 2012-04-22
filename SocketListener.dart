@@ -17,6 +17,8 @@ class SocketListener {
       
       inputStream = new SocketInputStream(socket);
       outputStream = socket.outputStream;
+      
+      this.write(Command.CLEAR);
     };
     
     socket.onData = () {
