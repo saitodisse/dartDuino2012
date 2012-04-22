@@ -14,7 +14,7 @@ class Questions {
     answers[1] = new Answer("Mercurial", false);
     answers[2] = new Answer("Git", false);
     
-    questions.add(new Question("What is the best version control?", answers, answers[2].value"));
+    questions.add(new Question("What is the best version control?", answers, answers[2].value));
     
     List<Answer> answers2 = new List<Answer>(3);
     answers2[0] = new Answer("Waterfall development", false);
