@@ -9,26 +9,32 @@ class Questions {
   Questions() {
     questions = new List<Question>();
     
+    addQuestion("What is the best version control?",
+      "Subversion",
+      "Mercurial",
+      "Git",
+      2);
+
+    addQuestion("What is the best methodology to develop software?",
+      "Waterfall development",
+      "Agile software development",
+      "Spiral development",
+      1);
+
+    addQuestion("What are the numeric types of DART language?",
+      "int, float, decimal",
+      "int, float, double",
+      "int, double",
+      2);
+  }
+  
+  void addQuestion(question, answerA, answerB, answerC, indiceCorrectAnswer){
     List<Answer> answers = new List<Answer>(3);
-    answers[0] = new Answer("Subversion", Answer.NEUTRAL);
-    answers[1] = new Answer("Mercurial", Answer.NEUTRAL);
-    answers[2] = new Answer("Git", Answer.NEUTRAL);
+    answers[0] = new Answer(answerA, Answer.NEUTRAL);
+    answers[1] = new Answer(answerB, Answer.NEUTRAL);
+    answers[2] = new Answer(answerC, Answer.NEUTRAL);
     
-    questions.add(new Question("What is the best version control?", answers, answers[2].value));
-    
-    List<Answer> answers2 = new List<Answer>(3);
-    answers2[0] = new Answer("Waterfall development", Answer.NEUTRAL);
-    answers2[1] = new Answer("Agile software development ", Answer.NEUTRAL);
-    answers2[2] = new Answer("Spiral development", Answer.NEUTRAL);
-    
-    questions.add(new Question("What is the best methodology to develop software?", answers2, answers2[1].value));
-    
-    List<Answer> answers3 = new List<Answer>(3);
-    answers3[0] = new Answer("int, float, decimal", Answer.NEUTRAL);
-    answers3[1] = new Answer("int, float, double", Answer.NEUTRAL);
-    answers3[2] = new Answer("int, double", Answer.NEUTRAL);
-    
-    questions.add(new Question("What are the numeric types of DART language?", answers3, answers3[2].value));    
+    questions.add(new Question(question, answers, answers[indiceCorrectAnswer].value));
   }
 }
 
