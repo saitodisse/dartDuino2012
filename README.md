@@ -3,7 +3,6 @@ dartDuino2012
 
 #### ROAD MAP ####
 * block user when waiting the validation
-* timer to start the application again
 * timer to change the answer
 
 #dartlang #darthack
@@ -15,15 +14,15 @@ dartDuino2012
     "answers": [
         {
             "value": "Answer 1",
-            "state": 0
+            "state": "N"/"C"/"I"
         },
         {
             "value": "Answer 2",
-            "state": 0
+            "state": "N"/"C"/"I"
         },
         {
             "value": "Answer 3",
-            "state": 0
+            "state": "N"/"C"/"I"
         }
     ],
     "status": true

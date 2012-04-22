@@ -6,7 +6,6 @@
 #source("HttpServerFactory.dart");
 #source("Config.dart");
 #source("QuizManager.dart");
-#source("Score.dart");
 
 SocketListener socket;
 QuizManager quiz;
