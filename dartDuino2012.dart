@@ -38,7 +38,6 @@ void requestReceivedHandler(HttpRequest request, HttpResponse response) {
   response.headers.set(HttpHeaders.CONTENT_TYPE, "text/html; charset=UTF-8");
   response.headers.set("Access-Control-Allow-Origin", "http://127.0.0.1:3030");
   response.headers.set("Access-Control-Allow-Credentials", "true");
-//  response.headers.set("Access-Control-Allow-Methods", "*");
   
   response.outputStream.writeString(htmlResponse);
   response.outputStream.close();
