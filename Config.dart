@@ -19,5 +19,5 @@ class Config {
   static final bool ARDUINO_DISCONNECTED = false;
   
   // bell off
-  static final bool ARDUINO_BELL_OFF = true;
+  static final bool ARDUINO_BELL_OFF = false;
 }
