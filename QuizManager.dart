@@ -17,6 +17,10 @@ class QuizManager {
   }
   
   Question get actualQuestion() {
+    // if < return a blank question
+    if (questions.questions.length < displayQuestion)
+      return new Question(null, null, null);
+    
     return questions.questions[displayQuestion];
   }
   
